@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Highlight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <iframe id="preview"></iframe>
+
+    <div class="editor">
+      <div class="tabs">
+        <div class="tab active" data-tab="html">HTML</div>
+        <div class="tab" data-tab="css">CSS</div>
+      </div>
+
+      <div id="html-tab" class="tab-content active">
+        <div class="code-container">
+          <code
+            id="html"
+            class="code-area language-html"
+            contenteditable="true"
+            spellcheck="false"
+          ></code>
+        </div>
+      </div>
+
+      <div id="css-tab" class="tab-content">
+        <div class="code-container">
+          <pre
+            class="highlight-preview language-css"
+          ><code id="css-highlight"></code></pre>
+          <code
+            id="css"
+            class="code-area content-layer"
+            contenteditable="true"
+            spellcheck="false"
+          ></code>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="playBtn">▶ Play CSS</button>
+      <button id="stopBtn" disabled>⏹ Stop</button>
+      <div class="color-picker-container">
+        <label class="color-picker-label" for="colorPicker">BG Color:</label>
+        <input
+          type="color"
+          id="colorPicker"
+          value="#262626"
+          title="Escolha a cor do background"
+        />
+      </div>
+    </div>
+    <div class="actions-down">
+      <div class="speed-input-container">
+        <label for="speedInput" class="speed-label">Speed (ms):</label>
+        <input
+          type="number"
+          id="speedInput"
+          class="speed-input"
+          value="25"
+          min="0"
+        />
+      </div>
+      <div class="status-container">
+        <span id="status" class="status"></span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
